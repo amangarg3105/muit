@@ -11,7 +11,7 @@ public class InsertionSort {
      * Run a loop from 1 to n-1 //inclusive
      * currentElement = array[i];
      * previousIndex = i;
-     * while(previousIndex > 0 && currentElement < array[previousIndex-1]) {
+     * while(previousIndex > 0 && currentElement < array[previousIndex-1]) { 2 < 1
      *     array[previousIndex] = array[previousIndex-1];
      *     previousIndex = previousIndex - 1;
      *}

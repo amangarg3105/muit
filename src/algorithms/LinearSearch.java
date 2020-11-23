@@ -18,6 +18,7 @@ public class LinearSearch {
      * @return
      */
     static int elementExists(int [] input, int element) {
+        int unSuccefulAttempt = 0;
         for (int index = 0; index < input.length; index++) {
             int currentElement = input[index];
             if(currentElement == element) {
