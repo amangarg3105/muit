@@ -18,6 +18,10 @@ public class NFibonnacciNumber {
 
 
 
+
+    //Recursion + memoziation
+    //TC - O(N)
+    //SC - O(n)
     public static int topDownFib(int n, int dpMemory[]) {
 
         //Base Case
@@ -41,6 +45,27 @@ public class NFibonnacciNumber {
     }
 
 
+    //TC - O(N)
+    //SC - O(n)
+    public static int bottomUp(int n) {
+        int dpMemory[] = new int[n + 1];
+
+        dpMemory[0] = 0;
+        dpMemory[1] = 1;
+
+        for(int i = 2; i <=n;  i++) {
+            dpMemory[i] = dpMemory[i - 1] + dpMemory [i - 2];
+        }
+        return dpMemory[n];
+    }
+
+
+
+
+
+
+
+
     public static void main(String[] args) {
 
 
@@ -57,7 +82,7 @@ public class NFibonnacciNumber {
        System.out.println(ans + "  " + (endTime - startTime));
 
         startTime = System.currentTimeMillis();
-        ans = fibonacciUsingRecursion(100);
+        ans = bottomUp(100);
         endTime = System.currentTimeMillis();
 
 
@@ -65,13 +90,6 @@ public class NFibonnacciNumber {
 
 
     }
-
-
-
-
-
-
-
 
 
 }
