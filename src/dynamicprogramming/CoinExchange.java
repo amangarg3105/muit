@@ -5,27 +5,6 @@ package dynamicprogramming;
 public class CoinExchange {
 
 
-    //recursion
-    public static int minCoins(int [] denominations, int amount) {
-
-        if(amount == 0) {
-            return 0;
-        }
-
-
-        int ans = Integer.MAX_VALUE;
-
-        for(int i = 0; i < denominations.length; i++) {
-
-            if(amount - denominations[i] >= 0) {
-            int smallAns = minCoins(denominations, amount - denominations[i]);
-            ans = Math.min(ans, smallAns + 1);
-        }
-    }
-        return  ans;
-    }
-
-
 
     public static int minCoinsUsingDynamicApproach(int [] denominations, int amount) {
 
