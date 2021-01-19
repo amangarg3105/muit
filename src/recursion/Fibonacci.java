@@ -1,6 +1,6 @@
+package recursion;
 
-
-public class Recursion {
+public class Fibonacci {
 
     //2^n
     public int fibonacci(int n) {

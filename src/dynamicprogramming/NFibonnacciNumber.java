@@ -19,7 +19,7 @@ public class NFibonnacciNumber {
 
 
 
-    //Recursion + memoziation
+    //recursion.Recursion + memoziation
     //TC - O(N)
     //SC - O(n)
     public static int topDownFib(int n, int dpMemory[]) {

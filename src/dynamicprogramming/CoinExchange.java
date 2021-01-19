@@ -6,6 +6,31 @@ public class CoinExchange {
 
 
 
+    public static  int minCoinUsingRecursion(int [] denominations, int amount) { // 1 2 5, 0
+
+        if(amount == 0) {
+            return 0;
+        }
+
+
+        int finalAns = Integer.MAX_VALUE;
+
+        for(int i = 0; i < denominations.length; i++) {
+            int denominationAmount = denominations[i]; //1
+
+            int remainingAmount = amount - denominationAmount;  //0
+
+            if(remainingAmount >= 0) {
+
+                int smallAns = minCoinUsingRecursion(denominations, remainingAmount); //x coins
+                finalAns = Math.min(finalAns, smallAns + 1);  //x
+
+            }
+
+        }
+        return finalAns;
+    }
+
     public static int minCoinsUsingDynamicApproach(int [] denominations, int amount) {
 
         if(amount == 0) {
@@ -49,15 +74,16 @@ public class CoinExchange {
 
     public static void main(String[] args) {
 
-        int [] denominations = {1, 10, 25};
-        int amount = 30;
-        int minCoinsNeeded = minCoins(denominations, amount);
+        int [] denominations = {1, 2, 5};
+        int amount = 8;
+        int minCoinsNeeded = minCoinUsingRecursion(denominations, amount);
+
 
         System.out.println(minCoinsNeeded);
 
-        minCoinsNeeded = minCoinsUsingDynamicApproach(denominations, amount);
+      //  minCoinsNeeded = minCoinsUsingDynamicApproach(denominations, amount);
 
-        System.out.println(minCoinsNeeded);
+     //   System.out.println(minCoinsNeeded);
 
     }
 }
