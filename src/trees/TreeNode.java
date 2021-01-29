@@ -8,7 +8,9 @@ public class TreeNode {
 
     String role;
 
-    ArrayList<TreeNode> childNodes;
+    TreeNode left;
+
+    TreeNode right;
 
 
     TreeNode(String role) {
@@ -16,12 +18,5 @@ public class TreeNode {
     }
 
 
-    public void setChildNodes(ArrayList<TreeNode> childNodes) {
-        this.childNodes = childNodes;
-    }
 
-
-    public ArrayList<TreeNode> getChildNodes() {
-        return childNodes;
-    }
 }
