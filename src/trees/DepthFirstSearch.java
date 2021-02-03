@@ -3,6 +3,20 @@ package trees;
 
 import java.util.Stack;
 
+
+
+class Pair {
+
+    TreeNode node;
+    int visitingCount;
+
+    Pair(TreeNode node) {
+        this.node = node;
+        visitingCount = 0;
+    }
+
+
+}
 public class DepthFirstSearch {
 
 
@@ -44,6 +58,32 @@ public class DepthFirstSearch {
         System.out.print(root.role + "   ");
     }
 
+/*
+TC - O(n)
+ */
+    public static void postOrderIterative(TreeNode root) {
+
+            Stack<Pair> stack = new Stack<>();
+            Pair p = new Pair(root);
+            stack.push(p);
+
+            while(!stack.isEmpty()) {
+                Pair treeNodePair = stack.peek();
+                treeNodePair.visitingCount++;
+                if(treeNodePair.node == null) {
+                    stack.pop();
+                } else if(treeNodePair.visitingCount == 1) {
+                    Pair leftTreePair = new Pair(treeNodePair.node.left);
+                    stack.push(leftTreePair);
+                } else if (treeNodePair.visitingCount == 2) {
+                    Pair rightTreePair = new Pair(treeNodePair.node.right);
+                    stack.push(rightTreePair);
+                } else {
+                    System.out.print(stack.pop().node.role + "    ");
+                }
+            }
+    }
+
 
     public static void inOrder(TreeNode root) {
 
@@ -80,19 +120,20 @@ public class DepthFirstSearch {
         root.left.left = new TreeNode("4");
         root.left.right = new TreeNode("5");
         root.right.left = new TreeNode("6");
-        root.right.right = new TreeNode("7");
 
 
 //        inOrderUsingIterative(root);
 //        System.out.println();
 //        inOrder(root);
-        preOrder(root);
+     //   preOrder(root);
 
+     //
+
+     //   preOrderUsingIterative(root);
+
+        postOrder(root);
         System.out.println();
-
-        preOrderUsingIterative(root);
-
-      //  postOrder(root);
+        postOrderIterative(root);
 
 
     }
