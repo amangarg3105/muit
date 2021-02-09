@@ -23,7 +23,7 @@ public class CompanyLevels {
         TreeNode node4 = new TreeNode("hr head");
         seniorRoles.add(node4);
 
-        root.setChildNodes(seniorRoles);
+    //    root.setChildNodes(seniorRoles);
 
 
 
@@ -38,23 +38,23 @@ public class CompanyLevels {
         reportingRoles.add(node6);
         reportingRoles.add(node7);
 
-        node1.setChildNodes(reportingRoles);
+    //    node1.setChildNodes(reportingRoles);
 
 
         System.out.println(root.role);
         System.out.println();
 
-        ArrayList<TreeNode> roles = root.getChildNodes();
+      //  ArrayList<TreeNode> roles = root.getChildNodes();
         System.out.println("Reporting to CEO");
-        for(TreeNode node : roles) {
-                System.out.print(node.role + "   ");
-        }
+//        for(TreeNode node : roles) {
+////                System.out.print(node.role + "   ");
+////        }
 
         System.out.println();
         System.out.println("Reporting to CTO");
-        for(TreeNode node : node1.getChildNodes()) {
-            System.out.print(node.role + "   ");
-        }
+//        for(TreeNode node : node1.getChildNodes()) {
+//            System.out.print(node.role + "   ");
+//        }
 
 
 

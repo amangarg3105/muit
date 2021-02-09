@@ -5,7 +5,7 @@ package trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class mirrorImage {
+public class MirrorImage {
 
 
     public static void mirrorImage(TreeNode root) {
