@@ -15,6 +15,8 @@ public class Hospital {
 
         PriorityQueue<Patient> priorityQueue = new PriorityQueue<>(new PatientComparator());
 
+
+
         Patient patient1 = new Patient("xyz", 5, 25, "Coughing");
 
         patients.add(patient1);
